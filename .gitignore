@@ -5,6 +5,8 @@
 
 # testing
 /coverage
+/address-finder-build
+
 
 # production
 /build

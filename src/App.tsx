@@ -35,16 +35,22 @@ class App extends React.Component<any, any> {
   }
 
   render() {
-    const inputProps = {value: this.state.addressSearch,onChange: this.autoCompleteLocation,placeholder: 'Auto complete Address...'}
+    const inputProps = { value: this.state.addressSearch, onChange: this.autoCompleteLocation, placeholder: 'Start Typing Address Here...' }
     return (
-      <div>
+      <div className="container text-center">
+
+        <div className="card">
         <PlacesAutocomplete inputProps={inputProps} />
-        <input value={this.state.form.physical_address_1} name="physical_address_1" type="text" onChange={this.changeHandler} placeholder="Physical Address 1" required />
-        <input value={this.state.form.city} name="city" placeholder="City" type="text" onChange={this.changeHandler} />
-        <input value={this.state.form.state} name="state" type="text" placeholder="state" onChange={this.changeHandler} required />
-        <input value={this.state.form.zip} name="zip" type="text" placeholder="zip" onChange={this.changeHandler} required />
-        <input value={this.state.form.county} name="county" type="text" placeholder="county" onChange={this.changeHandler} required />
+          <div className="card-body form-group">
+            <input className="form-control" value={this.state.form.physical_address_1} name="physical_address_1" type="text" onChange={this.changeHandler} placeholder="Physical Address 1" required />
+            <input className="form-control" value={this.state.form.city} name="city" placeholder="City" type="text" onChange={this.changeHandler} />
+            <input className="form-control" value={this.state.form.state} name="state" type="text" placeholder="state" onChange={this.changeHandler} required />
+            <input className="form-control" value={this.state.form.zip} name="zip" type="text" placeholder="zip" onChange={this.changeHandler} required />
+            <input className="form-control" value={this.state.form.county} name="county" type="text" placeholder="county" onChange={this.changeHandler} required />
+          </div>
+        </div>
       </div>
+
     );
   }
 }
